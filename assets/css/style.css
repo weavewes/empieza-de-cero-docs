@@ -283,6 +283,34 @@ ul li input[type="checkbox"] {
   }
 }
 
+/* Section Grid for Homepage */
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.section-grid h3 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.section-grid h3 a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.section-grid h3 a:hover {
+  text-decoration: underline;
+}
+
+.section-grid p {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 0;
+}
+
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
   :root {
