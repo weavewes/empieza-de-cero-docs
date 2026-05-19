@@ -1,0 +1,47 @@
+title: "Empieza de Cero — Documentación"
+description: "Sistema de documentación para Empieza de Cero, SL (Julián Alarcón)"
+author: "Weaves"
+url: "https://weavewes.github.io"
+baseurl: "/empieza-de-cero-docs"
+
+# Theme
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+
+# Markdown settings
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Collections
+collections:
+  docs:
+    output: true
+    permalink: /:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "docs"
+    values:
+      layout: "default"
+  - scope:
+      path: "docs"
+    values:
+      layout: "default"
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Custom variables
+client_name: "Empieza de Cero, SL"
+client_contact: "Julián Alarcón"
+brand_color: "#1a73e8"

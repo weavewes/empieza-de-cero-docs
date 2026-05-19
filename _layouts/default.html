@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }} — {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📋%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <span class="logo">📋</span>
+        <div class="brand-text">
+          <h1><a href="{{ '/' | relative_url }}">{{ site.title }}</a></h1>
+          <span class="subtitle">{{ site.description }}</span>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="{{ '/docs/datos-generales/' | relative_url }}">Datos Generales</a>
+        <a href="{{ '/docs/contratos/' | relative_url }}">Contratos</a>
+        <a href="{{ '/docs/propuestas/' | relative_url }}">Propuestas</a>
+        <a href="{{ '/docs/notas-internas/' | relative_url }}">Notas Internas</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {% if page.parent %}
+    <nav class="breadcrumbs">
+      <a href="{{ '/' | relative_url }}">Inicio</a>
+      {% if page.parent %}
+        <span>/</span>
+        <a href="{{ page.parent | slugify | prepend: '/docs/' | append: '/' | relative_url }}">{{ page.parent }}</a>
+      {% endif %}
+      <span>/</span>
+      <span>{{ page.title }}</span>
+    </nav>
+    {% endif %}
+
+    <article class="page-content">
+      {{ content }}
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Desarrollado y mantenido por <a href="https://weaves.lat" target="_blank">Weaves</a></p>
+      <p class="small">Última actualización: {{ site.time | date: '%Y-%m-%d' }}</p>
+    </div>
+  </footer>
+</body>
+</html>
